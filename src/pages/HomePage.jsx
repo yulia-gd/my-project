@@ -19,7 +19,7 @@ export function HomePage() {
     <div className="relative overflow-hidden">
       {/* Video Background */}
       <video
-        src="/project/video.mp4"
+        src="/my-project/video.mp4"
         autoPlay
         loop
         muted

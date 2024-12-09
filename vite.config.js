@@ -6,5 +6,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'], // Якщо потрібно виключити ці залежності
   },
-  base: '/project/', // Вкажіть коректний шлях для розгортання
+  base: '/my-project/', // Вкажіть коректний шлях для розгортання
 });
