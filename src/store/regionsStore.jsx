@@ -8,7 +8,7 @@ export const useRegionsStore = create((set) => ({
   // Function to fetch regions from the backend
   fetchRegions: async () => {
     try {
-      const response = await axios.get('https://project-npq0.onrender.com/api/regions'); // Change URL as needed
+      const response = await axios.get('https://my-project-x98y.onrender.com/api/regions'); // Change URL as needed
       set({ regions: response.data });
     } catch (error) {
       console.error('Error fetching regions:', error);

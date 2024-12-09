@@ -9,7 +9,7 @@ export const useCountriesStore = create((set, get) => ({
   // Функція для завантаження країн з бекенду
   fetchCountries: async () => {
     try {
-      const response = await axios.get('https://project-npq0.onrender.com/api/countries');
+      const response = await axios.get('https://my-project-x98y.onrender.com/api/countries');
       set({ countries: response.data });
     } catch (error) {
       console.error('Error fetching countries:', error);
@@ -20,7 +20,7 @@ export const useCountriesStore = create((set, get) => ({
   fetchDishesByCountry: async (countryName) => {
     try {
       const lowerCaseCountryName = countryName.toLowerCase(); // Перетворюємо країну на малу літеру
-      const response = await axios.get(`https://project-npq0.onrender.com/api/dishes/${lowerCaseCountryName}`);
+      const response = await axios.get(`https://my-project-x98y.onrender.com/api/dishes/${lowerCaseCountryName}`);
       return response.data; // Повертає страви для країни
     } catch (error) {
       console.error('Error fetching dishes:', error);

@@ -1,9 +1,11 @@
 import { Star, MapPin, Bookmark } from 'lucide-react';
 import { useEstablishmentsStore } from '../../store/establishmentsStore';
+import { useAuthStore } from '../../store/authStore'; // Імпортуємо useAuthStore
 import '../../style/EstablishmentCard.css'; // Підключаємо стилі
 
 export function EstablishmentCard({ establishment }) {
   const { savedEstablishments, toggleSaved } = useEstablishmentsStore();
+  const { isAuthenticated } = useAuthStore(); // Отримуємо статус аутентифікації
   const isSaved = savedEstablishments.includes(establishment.id);
 
   return (
@@ -14,16 +16,20 @@ export function EstablishmentCard({ establishment }) {
           alt={establishment.name}
           className="establishment-image"
         />
-       <button
-  onClick={() => toggleSaved(establishment.id)}
-  className="save-est-button"
->
-  <Bookmark
-    className={`bookmark-icon ${isSaved ? 'fill-red-600 text-red-600' : 'text-gray-600'}`}
-  />
-</button>
-
+        
+        {/* Показувати кнопку збереження лише якщо користувач авторизований */}
+        {isAuthenticated && (
+          <button
+            onClick={() => toggleSaved(establishment.id)}
+            className="save-est-button"
+          >
+            <Bookmark
+              className={`bookmark-icon ${isSaved ? 'fill-red-600 text-red-600' : 'text-gray-600'}`}
+            />
+          </button>
+        )}
       </div>
+      
       <div className="p-6">
         <div className="establishment-title-container">
           <h3 className="establishment-title">

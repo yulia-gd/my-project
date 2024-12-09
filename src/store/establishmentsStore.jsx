@@ -8,7 +8,7 @@ export const useEstablishmentsStore = create((set, get) => ({
   // Функція для завантаження закладів з бекенду
   fetchEstablishments: async () => {
     try {
-      const response = await axios.get('https://project-npq0.onrender.com/api/establishments');
+      const response = await axios.get('https://my-project-x98y.onrender.com/api/establishments');
       set({ establishments: response.data });
     } catch (error) {
       console.error('Error fetching establishments:', error);
