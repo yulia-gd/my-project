@@ -6,9 +6,9 @@ const countrySchema = new mongoose.Schema({
   region: { type: String, required: true }, // Регіон
   description: { type: String, required: true }, // Опис країни
   imageUrl: { type: String, required: true }, // Посилання на зображення країни
-  traditionalDishes: { type: String, required: true }, // Традиційні страви країни
+  traditionalDishes: { type: String, default: ""  }, // Традиційні страви країни
 });
 
-const Country = mongoose.model('Country', countrySchema);
+const Country =  mongoose.model('Country', countrySchema);
 
 module.exports = Country;
