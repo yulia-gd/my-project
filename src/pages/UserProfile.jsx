@@ -20,7 +20,7 @@ export function UserProfile() {
       <div className="profile-content">
         <div className="flex-shrink-0">
           <img
-            src={user.profilePhotoUrl}
+            src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAuNYMYNaRi00Ov27G9c0fNpMJP5NQJ06A6eYNGDPMpfvDvfOPuuA13FcP9ftMIIunqdM&usqp=CAU"}
             alt={`${user.name}'s profile`}
             className="profile-photo"
           />

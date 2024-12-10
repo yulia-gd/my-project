@@ -23,10 +23,15 @@ export function LoginForm() {
 
   const onSubmit = async (data) => {
     try {
-      await login(data.email);
+      // Передаємо і email, і password
+      await login(data.email, data.password);
       navigate("/profile");
     } catch (error) {
+      // Лог для розробника
       console.error("Login failed:", error);
+
+      // Показуємо користувачеві повідомлення
+      alert("Login failed. Please check your email and password.");
     }
   };
 

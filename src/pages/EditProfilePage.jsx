@@ -7,14 +7,12 @@ import "../style/EditProfilePage.css";
 
 const profileSchema = z.object({
   name: z.string().nonempty("Name is required"),
-  email: z.string().email("Invalid email address"),
   birthYear: z
     .number()
     .min(1900, "Year must be at least 1900")
     .max(new Date().getFullYear(), "Year cannot be in the future"),
   gender: z.enum(["Male", "Female", "Other"], "Select a valid gender"),
 });
-
 export function EditProfilePage() {
   const { user, updateUser } = useAuthStore();
   const navigate = useNavigate();
@@ -25,7 +23,6 @@ export function EditProfilePage() {
   } = useForm({
     defaultValues: {
       name: user?.name || "",
-      email: user?.email || "",
       birthYear: user?.birthYear || "",
       gender: user?.gender || "Other",
     },
@@ -53,16 +50,6 @@ export function EditProfilePage() {
           />
           {errors.name && (
             <p className="error-message">{errors.name.message}</p>
-          )}
-        </div>
-        <div>
-          <label className="input-label">Email</label>
-          <input
-            {...register("email")}
-            className={`input-field ${errors.email ? "input-error" : ""}`}
-          />
-          {errors.email && (
-            <p className="error-message">{errors.email.message}</p>
           )}
         </div>
         <div>

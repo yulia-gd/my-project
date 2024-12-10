@@ -9,39 +9,35 @@ export function RegisterForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [photo, setPhoto] = useState(null);
   const [birthYear, setBirthYear] = useState("");
   const [gender, setGender] = useState("female");
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
-
-    if (!photo) {
-      alert("Please upload a photo!");
+  
+    // Валідація
+    if (!name || !email || !password || !birthYear || !gender) {
+      alert("Please fill in all required fields!");
+      console.error("All fields are required");
       return;
     }
-
-    if (birthYear === "") {
-      alert("Please enter your birth year!");
-      return;
-    }
-
+  
     if (password !== confirmPassword) {
       alert("Passwords do not match!");
       return;
     }
-
-    const photoPath = URL.createObjectURL(photo);
-
+  
     try {
-      await register(name, email, photoPath, birthYear, gender);
+      // Реєстрація
+      await register(name, email, password, birthYear, gender);
       navigate("/profile");
     } catch (error) {
+      console.error("Registration failed:", error);
       alert("Registration failed. Please try again.");
     }
   };
-
+  
   return (
     <form onSubmit={handleRegister} className="form-container">
       <h2 className="form-title">Register</h2>
@@ -125,19 +121,6 @@ export function RegisterForm() {
           <option value="female">Female</option>
           <option value="other">Other</option>
         </select>
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="photo" className="form-label">
-          Profile Photo
-        </label>
-        <input
-          type="file"
-          id="photo"
-          accept="image/*"
-          onChange={(e) => setPhoto(e.target.files?.[0] || null)}
-          className="form-input"
-        />
       </div>
 
       <button type="submit" className="form-button">
