@@ -1,13 +1,13 @@
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useAuthStore } from '../../store/authStore';
-import { useNavigate, Link } from 'react-router-dom';
-import '../../style/LoginForm.css';
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useAuthStore } from "../../store/authStore";
+import { useNavigate, Link } from "react-router-dom";
+import "../../style/LoginForm.css";
 
 const loginSchema = z.object({
-  email: z.string().email('Invalid email address'),
-  password: z.string().min(6, 'Password must be at least 6 characters'),
+  email: z.string().email("Invalid email address"),
+  password: z.string().min(6, "Password must be at least 6 characters"),
 });
 
 export function LoginForm() {
@@ -24,9 +24,9 @@ export function LoginForm() {
   const onSubmit = async (data) => {
     try {
       await login(data.email);
-      navigate('/profile');
+      navigate("/profile");
     } catch (error) {
-      console.error('Login failed:', error);
+      console.error("Login failed:", error);
     }
   };
 
@@ -39,34 +39,36 @@ export function LoginForm() {
             Email
           </label>
           <input
-            {...register('email')}
+            {...register("email")}
             type="email"
-            className={`input-field ${errors.email ? 'input-field-error' : ''}`}
+            className={`input-field ${errors.email ? "input-field-error" : ""}`}
           />
           {errors.email && (
             <p className="error-message">{errors.email.message}</p>
           )}
         </div>
-  
+
         <div>
           <label htmlFor="password" className="input-label">
             Password
           </label>
           <input
-            {...register('password')}
+            {...register("password")}
             type="password"
-            className={`input-field ${errors.password ? 'input-field-error' : ''}`}
+            className={`input-field ${
+              errors.password ? "input-field-error" : ""
+            }`}
           />
           {errors.password && (
             <p className="error-message">{errors.password.message}</p>
           )}
         </div>
-  
+
         <button type="submit" className="submit-button">
           Log In
         </button>
       </form>
-  
+
       <div className="mt-4 text-center">
         <Link to="/forgot-password" className="forgot-password-link">
           Forgot password?

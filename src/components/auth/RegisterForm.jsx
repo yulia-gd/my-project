@@ -1,34 +1,34 @@
-import React, { useState } from 'react';
-import { useAuthStore } from '../../store/authStore';
-import { useNavigate } from 'react-router-dom';
-import '../../style/RegisterForm.css';
+import React, { useState } from "react";
+import { useAuthStore } from "../../store/authStore";
+import { useNavigate } from "react-router-dom";
+import "../../style/RegisterForm.css";
 
 export function RegisterForm() {
   const { register } = useAuthStore();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [photo, setPhoto] = useState(null);
-  const [birthYear, setBirthYear] = useState('');
-  const [gender, setGender] = useState('female');
+  const [birthYear, setBirthYear] = useState("");
+  const [gender, setGender] = useState("female");
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
 
     if (!photo) {
-      alert('Please upload a photo!');
+      alert("Please upload a photo!");
       return;
     }
 
-    if (birthYear === '') {
-      alert('Please enter your birth year!');
+    if (birthYear === "") {
+      alert("Please enter your birth year!");
       return;
     }
 
     if (password !== confirmPassword) {
-      alert('Passwords do not match!');
+      alert("Passwords do not match!");
       return;
     }
 
@@ -36,9 +36,9 @@ export function RegisterForm() {
 
     try {
       await register(name, email, photoPath, birthYear, gender);
-      navigate('/profile');
+      navigate("/profile");
     } catch (error) {
-      alert('Registration failed. Please try again.');
+      alert("Registration failed. Please try again.");
     }
   };
 
@@ -47,7 +47,9 @@ export function RegisterForm() {
       <h2 className="form-title">Register</h2>
 
       <div className="form-group">
-        <label htmlFor="name" className="form-label">Name</label>
+        <label htmlFor="name" className="form-label">
+          Name
+        </label>
         <input
           type="text"
           id="name"
@@ -58,7 +60,9 @@ export function RegisterForm() {
       </div>
 
       <div className="form-group">
-        <label htmlFor="email" className="form-label">Email</label>
+        <label htmlFor="email" className="form-label">
+          Email
+        </label>
         <input
           type="email"
           id="email"
@@ -69,7 +73,9 @@ export function RegisterForm() {
       </div>
 
       <div className="form-group">
-        <label htmlFor="password" className="form-label">Password</label>
+        <label htmlFor="password" className="form-label">
+          Password
+        </label>
         <input
           type="password"
           id="password"
@@ -80,7 +86,9 @@ export function RegisterForm() {
       </div>
 
       <div className="form-group">
-        <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
+        <label htmlFor="confirmPassword" className="form-label">
+          Confirm Password
+        </label>
         <input
           type="password"
           id="confirmPassword"
@@ -91,7 +99,9 @@ export function RegisterForm() {
       </div>
 
       <div className="form-group">
-        <label htmlFor="birthYear" className="form-label">Birth Year</label>
+        <label htmlFor="birthYear" className="form-label">
+          Birth Year
+        </label>
         <input
           type="number"
           id="birthYear"
@@ -102,7 +112,9 @@ export function RegisterForm() {
       </div>
 
       <div className="form-group">
-        <label htmlFor="gender" className="form-label">Gender</label>
+        <label htmlFor="gender" className="form-label">
+          Gender
+        </label>
         <select
           id="gender"
           value={gender}
@@ -116,7 +128,9 @@ export function RegisterForm() {
       </div>
 
       <div className="form-group">
-        <label htmlFor="photo" className="form-label">Profile Photo</label>
+        <label htmlFor="photo" className="form-label">
+          Profile Photo
+        </label>
         <input
           type="file"
           id="photo"

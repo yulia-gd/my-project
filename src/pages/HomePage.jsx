@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
-import { Globe, Search, BookmarkCheck } from 'lucide-react';
-import { useEffect } from 'react';
-import { useRegionsStore } from '../store/regionsStore';
-import '../style/HomePage.css';
+import { Link } from "react-router-dom";
+import { Globe, Search, BookmarkCheck } from "lucide-react";
+import { useEffect } from "react";
+import { useRegionsStore } from "../store/regionsStore";
+import "../style/HomePage.css";
 
 export function HomePage() {
   const { regions, fetchRegions } = useRegionsStore((state) => ({
@@ -10,14 +10,12 @@ export function HomePage() {
     fetchRegions: state.fetchRegions,
   }));
 
-  // Fetch regions on component mount
   useEffect(() => {
     fetchRegions();
   }, [fetchRegions]);
 
   return (
     <div className="relative overflow-hidden">
-      {/* Video Background */}
       <video
         src="/my-project/video.mp4"
         autoPlay
@@ -36,7 +34,8 @@ export function HomePage() {
                   <span className="sub-heading">Culinary Heritage</span>
                 </h1>
                 <p className="description">
-                  Explore authentic cuisines, traditional dishes, and local establishments from every corner of the globe.
+                  Explore authentic cuisines, traditional dishes, and local
+                  establishments from every corner of the globe.
                 </p>
                 <div className="button-container">
                   <Link to="/regions" className="explore-button">
@@ -51,7 +50,6 @@ export function HomePage() {
 
       <div className="divider"></div>
 
-      {/* Features Section */}
       <section className="features-section">
         <div className="section-container px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -61,7 +59,8 @@ export function HomePage() {
               </div>
               <h3 className="feature-title">Global Cuisines</h3>
               <p className="feature-description">
-                Explore diverse culinary traditions from different regions of the world.
+                Explore diverse culinary traditions from different regions of
+                the world.
               </p>
             </div>
             <div className="feature-card">
@@ -79,7 +78,8 @@ export function HomePage() {
               </div>
               <h3 className="feature-title">Save Favorites</h3>
               <p className="feature-description">
-                Create your personal collection of must-visit culinary destinations.
+                Create your personal collection of must-visit culinary
+                destinations.
               </p>
             </div>
           </div>
@@ -88,7 +88,6 @@ export function HomePage() {
 
       <div className="divider"></div>
 
-      {/* Featured Regions */}
       <section className="featured-regions-section">
         <div className="section-container px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">

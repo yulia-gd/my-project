@@ -1,36 +1,27 @@
-/* SavedEstablishmentsPage.css */
-
-/* Загальний контейнер сторінки */
 .page-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12;
-  }
-  
-  /* Заголовок сторінки */
-  .page-header {
-    @apply text-center mb-12;
-  }
-  
-  /* Заголовок */
-  .page-title {
-    @apply text-4xl font-bold text-gray-900;
-  }
-  
-  /* Опис заголовка */
-  .page-description {
-    @apply mt-4 text-lg text-gray-600;
-  }
-  
-  /* Сітка для збережених закладів */
-  .saved-grid {
-    @apply grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3;
-  }
-  
-  /* Порожній стан */
-  .empty-state {
-    @apply text-center py-12;
-  }
-  
-  .empty-message {
-    @apply text-gray-500;
-  }
-  
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12;
+}
+
+.page-header {
+  @apply text-center mb-12;
+}
+
+.page-title {
+  @apply text-4xl font-bold text-gray-900;
+}
+
+.page-description {
+  @apply mt-4 text-lg text-gray-600;
+}
+
+.saved-grid {
+  @apply grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+.empty-state {
+  @apply text-center py-12;
+}
+
+.empty-message {
+  @apply text-gray-500;
+}

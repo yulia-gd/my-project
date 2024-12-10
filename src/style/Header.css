@@ -1,79 +1,63 @@
-
 .header {
-    @apply fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100;
-  }
-  
-  /* Контейнер для логотипу і навігації */
-  .header-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6;
-  }
-  
-  /* Основний контейнер для елементів хедеру */
-  .header-content {
-    @apply flex justify-between items-center py-6;
-  }
-  
-  /* Логотип */
-  .logo-link {
-    @apply flex items-center space-x-2 hover:scale-110 transition-transform duration-300 hover:text-red-600;
-  }
-  
-  /* Логотип іконка */
-  .logo-icon {
-    @apply h-8 w-8 text-red-600 hover:text-red-600 transition-colors duration-300;
-  }
-  
-  /* Назва сайту */
-  .site-name {
-    @apply text-2xl font-bold text-gray-900;
-  }
-  
-  /* Навігація */
-  .nav {
-    @apply hidden md:flex items-center gap-8;
-  }
-  
-  /* Силки навігації */
-  .nav-link {
-    @apply text-gray-700 hover:text-red-600 transition-colors;
-  }
-  
-  /* Блок для автентифікації */
-  .auth-links {
-    @apply flex items-center space-x-4;
-  }
-  
-  /* Кнопка Logout */
-  .logout-button {
-    @apply text-gray-700 hover:text-red-800 transition-colors;
-  }
-  
-  /* Кнопки Login і Register */
-  .auth-button {
-    @apply bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors;
-  }
-  
-  /* Мобільне меню */
-  .mobile-menu-button {
-    @apply md:hidden;
-  }
-  
-  /* Стиль для відкритого мобільного меню */
-  .mobile-menu {
-    @apply md:hidden py-4;
-  }
-  
-  /* Стилі для мобільного меню */
-  .mobile-menu-item {
-    @apply text-gray-700 hover:text-red-600 transition-colors;
-  }
-  
-  /* Стиль кнопки для закриття меню */
-  .close-menu-button {
-    @apply h-6 w-6 text-gray-600;
-  }
-  
-  .open-menu-button {
-    @apply h-6 w-6 text-gray-600;
-  }
-  
+  @apply fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100;
+}
+
+.header-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6;
+}
+
+.header-content {
+  @apply flex justify-between items-center py-6;
+}
+
+.logo-link {
+  @apply flex items-center space-x-2 hover:scale-110 transition-transform duration-300 hover:text-red-600;
+}
+
+.logo-icon {
+  @apply h-8 w-8 text-red-600 hover:text-red-600 transition-colors duration-300;
+}
+
+.site-name {
+  @apply text-2xl font-bold text-gray-900;
+}
+
+.nav {
+  @apply hidden md:flex items-center gap-8;
+}
+
+.nav-link {
+  @apply text-gray-700 hover:text-red-600 transition-colors;
+}
+
+.auth-links {
+  @apply flex items-center space-x-4;
+}
+
+.logout-button {
+  @apply text-gray-700 hover:text-red-800 transition-colors;
+}
+
+.auth-button {
+  @apply bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors;
+}
+
+.mobile-menu-button {
+  @apply md:hidden;
+}
+
+.mobile-menu {
+  @apply md:hidden py-4;
+}
+
+.mobile-menu-item {
+  @apply text-gray-700 hover:text-red-600 transition-colors;
+}
+
+.close-menu-button {
+  @apply h-6 w-6 text-gray-600;
+}
+
+.open-menu-button {
+  @apply h-6 w-6 text-gray-600;
+}

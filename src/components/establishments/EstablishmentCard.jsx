@@ -1,11 +1,11 @@
-import { Star, MapPin, Bookmark } from 'lucide-react';
-import { useEstablishmentsStore } from '../../store/establishmentsStore';
-import { useAuthStore } from '../../store/authStore'; // Імпортуємо useAuthStore
-import '../../style/EstablishmentCard.css'; // Підключаємо стилі
+import { Star, MapPin, Bookmark } from "lucide-react";
+import { useEstablishmentsStore } from "../../store/establishmentsStore";
+import { useAuthStore } from "../../store/authStore";
+import "../../style/EstablishmentCard.css";
 
 export function EstablishmentCard({ establishment }) {
   const { savedEstablishments, toggleSaved } = useEstablishmentsStore();
-  const { isAuthenticated } = useAuthStore(); // Отримуємо статус аутентифікації
+  const { isAuthenticated } = useAuthStore();
   const isSaved = savedEstablishments.includes(establishment.id);
 
   return (
@@ -16,25 +16,24 @@ export function EstablishmentCard({ establishment }) {
           alt={establishment.name}
           className="establishment-image"
         />
-        
-        {/* Показувати кнопку збереження лише якщо користувач авторизований */}
+
         {isAuthenticated && (
           <button
             onClick={() => toggleSaved(establishment.id)}
             className="save-est-button"
           >
             <Bookmark
-              className={`bookmark-icon ${isSaved ? 'fill-red-600 text-red-600' : 'text-gray-600'}`}
+              className={`bookmark-icon ${
+                isSaved ? "fill-red-600 text-red-600" : "text-gray-600"
+              }`}
             />
           </button>
         )}
       </div>
-      
+
       <div className="p-6">
         <div className="establishment-title-container">
-          <h3 className="establishment-title">
-            {establishment.name}
-          </h3>
+          <h3 className="establishment-title">{establishment.name}</h3>
           <div className="rating-container">
             <Star className="rating-icon" />
             <span className="rating-text">{establishment.rating}</span>

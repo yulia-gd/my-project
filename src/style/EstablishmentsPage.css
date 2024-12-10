@@ -1,55 +1,43 @@
-/* EstablishmentsPage.css */
-
-/* Контейнер основного контенту */
 .establishments-page-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12;
-  }
-  
-  /* Заголовок сторінки */
-  .page-title {
-    @apply text-4xl font-bold text-gray-900;
-  }
-  
-  /* Опис під заголовком */
-  .page-description {
-    @apply mt-4 text-lg text-gray-600;
-  }
-  
-  /* Фільтри пошуку */
-  .filters-container {
-    @apply mb-8 space-y-4 sm:flex sm:space-y-0 sm:space-x-4;
-  }
-  
-  /* Поле пошуку */
-  .search-input-container {
-    @apply relative flex-1;
-  }
-  
-  .search-input {
-    @apply block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-red-500 focus:border-red-500 sm:text-sm;
-  }
-  
-  /* Селектори типів і країн */
-  .filter-select-container {
-    @apply relative;
-  }
-  
-  .filter-select {
-    @apply block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm rounded-md;
-  }
-  
-  /* Іконки фільтрів */
-  .filter-icon {
-    @apply h-5 w-5 text-gray-400;
-  }
-  
-  /* Контейнер для карток закладів */
-  .establishment-card-container {
-    @apply grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3;
-  }
-  
-  /* Повідомлення, якщо заклади не знайдені */
-  .no-establishments-message {
-    @apply text-center py-12 text-gray-500;
-  }
-  
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12;
+}
+
+.page-title {
+  @apply text-4xl font-bold text-gray-900;
+}
+
+.page-description {
+  @apply mt-4 text-lg text-gray-600;
+}
+
+.filters-container {
+  @apply mb-8 space-y-4 sm:flex sm:space-y-0 sm:space-x-4;
+}
+
+.search-input-container {
+  @apply relative flex-1;
+}
+
+.search-input {
+  @apply block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-red-500 focus:border-red-500 sm:text-sm;
+}
+
+.filter-select-container {
+  @apply relative;
+}
+
+.filter-select {
+  @apply block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm rounded-md;
+}
+
+.filter-icon {
+  @apply h-5 w-5 text-gray-400;
+}
+
+.establishment-card-container {
+  @apply grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+.no-establishments-message {
+  @apply text-center py-12 text-gray-500;
+}

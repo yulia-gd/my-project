@@ -1,98 +1,92 @@
-/* HomePage.css */
-
-/* Загальні стилі */
 .section-container {
-    @apply max-w-7xl mx-auto;
-  }
-  
-  .video-background {
-    @apply w-full h-[220px] object-cover;
-  }
-  
-  .divider {
-    @apply bg-red-600 h-[5px];
-  }
-  
-  /* Секція з заголовком */
-  .hero-container {
-    @apply relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32;
-  }
-  
-  .main-heading {
-    @apply text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-6xl;
-  }
-  
-  .sub-heading {
-    @apply block text-red-600;
-  }
-  
-  .description {
-    @apply mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl;
-  }
-  
-  .button-container {
-    @apply mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8;
-  }
-  
-  .explore-button {
-    @apply inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-800;
-  }
-  
-  /* Секція з можливостями (Features) */
-  .features-section {
-    @apply py-16 bg-red-50;
-  }
-  
-  .feature-card {
-    @apply text-center;
-  }
-  
-  .feature-icon {
-    @apply h-10 w-10 text-red-600;
-  }
-  
-  .feature-title {
-    @apply mt-4 text-xl font-semibold text-gray-900;
-  }
-  
-  .feature-description {
-    @apply mt-2 text-gray-600;
-  }
-  
-  /* Секція з регіонами (Featured Regions) */
-  .featured-regions-section {
-    @apply py-16 bg-white;
-  }
-  
-  .featured-heading {
-    @apply text-3xl font-bold text-gray-900;
-  }
-  
-  .featured-description {
-    @apply mt-4 text-lg text-gray-600;
-  }
-  
-  .region-card {
-    @apply  block relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow;
-  }
-  
-  .region-image {
-    @apply w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300;
-  }
-  
-  .region-overlay {
-    @apply absolute inset-0 bg-gradient-to-t from-black/60 to-transparent;
-  }
-  
-  .region-info {
-    @apply absolute bottom-0 left-0 right-0 p-6;
-  }
-  
-  .region-title {
-    @apply text-xl font-semibold text-white;
-  }
-  
-  .region-description {
-    @apply mt-2 text-sm text-white/90 line-clamp-2;
-  }
-  
+  @apply max-w-7xl mx-auto;
+}
+
+.video-background {
+  @apply w-full h-[220px] object-cover;
+}
+
+.divider {
+  @apply bg-red-600 h-[5px];
+}
+
+.hero-container {
+  @apply relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32;
+}
+
+.main-heading {
+  @apply text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-6xl;
+}
+
+.sub-heading {
+  @apply block text-red-600;
+}
+
+.description {
+  @apply mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl;
+}
+
+.button-container {
+  @apply mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8;
+}
+
+.explore-button {
+  @apply inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-800;
+}
+
+.features-section {
+  @apply py-16 bg-red-50;
+}
+
+.feature-card {
+  @apply text-center;
+}
+
+.feature-icon {
+  @apply h-10 w-10 text-red-600;
+}
+
+.feature-title {
+  @apply mt-4 text-xl font-semibold text-gray-900;
+}
+
+.feature-description {
+  @apply mt-2 text-gray-600;
+}
+
+/* Секція з регіонами (Featured Regions) */
+.featured-regions-section {
+  @apply py-16 bg-white;
+}
+
+.featured-heading {
+  @apply text-3xl font-bold text-gray-900;
+}
+
+.featured-description {
+  @apply mt-4 text-lg text-gray-600;
+}
+
+.region-card {
+  @apply block relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow;
+}
+
+.region-image {
+  @apply w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300;
+}
+
+.region-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/60 to-transparent;
+}
+
+.region-info {
+  @apply absolute bottom-0 left-0 right-0 p-6;
+}
+
+.region-title {
+  @apply text-xl font-semibold text-white;
+}
+
+.region-description {
+  @apply mt-2 text-sm text-white/90 line-clamp-2;
+}

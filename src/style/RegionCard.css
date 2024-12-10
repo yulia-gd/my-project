@@ -1,47 +1,35 @@
-/* RegionCard.css */
-
-/* Контейнер картки регіону */
 .region-card {
   @apply relative overflow-hidden rounded-2xl bg-white shadow-md transition-all hover:shadow-xl;
-  }
-  
-  /* Контейнер для зображення */
-  .region-card-image-container {
-    @apply aspect-[16/9] w-full;
-  }
-  
-  /* Зображення в картці */
-  .region-card-image {
-    @apply h-full w-full object-cover transition-transform duration-300 group-hover:scale-105;
-  }
-  
-  /* Контейнер для тексту */
-  .region-card-text {
-    @apply p-6;
-  }
-  
-  /* Назва регіону */
-  .region-card-title {
-    @apply text-xl font-semibold text-gray-900 group-hover:text-red-600 transition-colors;
-  }
-  
-  /* Опис регіону */
-  .region-card-description {
-    @apply mt-2 text-gray-600 line-clamp-2;
-  }
-  
-  /* Контейнер для посилання "Explore region" */
-  .region-card-footer {
-    @apply mt-4 flex items-center text-red-600;
-  }
-  
-  /* Текст у футері */
-  .region-card-footer-text {
-    @apply text-sm font-medium;
-  }
-  
-  /* Стрілка в футері */
-  .region-card-footer-icon {
-    @apply ml-1 h-4 w-4;
-  }
-  
+}
+
+.region-card-image-container {
+  @apply aspect-[16/9] w-full;
+}
+
+.region-card-image {
+  @apply h-full w-full object-cover transition-transform duration-300 group-hover:scale-105;
+}
+
+.region-card-text {
+  @apply p-6;
+}
+
+.region-card-title {
+  @apply text-xl font-semibold text-gray-900 group-hover:text-red-600 transition-colors;
+}
+
+.region-card-description {
+  @apply mt-2 text-gray-600 line-clamp-2;
+}
+
+.region-card-footer {
+  @apply mt-4 flex items-center text-red-600;
+}
+
+.region-card-footer-text {
+  @apply text-sm font-medium;
+}
+
+.region-card-footer-icon {
+  @apply ml-1 h-4 w-4;
+}

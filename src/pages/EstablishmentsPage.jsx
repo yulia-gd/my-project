@@ -1,31 +1,31 @@
-import { useState, useEffect } from 'react'; 
-import { Search, Filter } from 'lucide-react'; 
-import { useEstablishmentsStore } from '../store/establishmentsStore'; 
-import { EstablishmentCard } from '../components/establishments/EstablishmentCard'; 
-import '../style/EstablishmentsPage.css'; // Import the CSS file
+import { useState, useEffect } from "react";
+import { Search, Filter } from "lucide-react";
+import { useEstablishmentsStore } from "../store/establishmentsStore";
+import { EstablishmentCard } from "../components/establishments/EstablishmentCard";
+import "../style/EstablishmentsPage.css";
 
 const ESTABLISHMENT_TYPES = [
-  'restaurant', 
-  'street-food', 
-  'cafe', 
-  'traditional', 
-  'casual', 
-  'fine-dining', 
+  "restaurant",
+  "street-food",
+  "cafe",
+  "traditional",
+  "casual",
+  "fine-dining",
 ];
 
 export function EstablishmentsPage() {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedType, setSelectedType] = useState(null);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
 
-  // Get establishments and fetch function from Zustand store
-  const { establishments, fetchEstablishments } = useEstablishmentsStore((state) => ({
-    establishments: state.establishments,
-    fetchEstablishments: state.fetchEstablishments,
-  }));
+  const { establishments, fetchEstablishments } = useEstablishmentsStore(
+    (state) => ({
+      establishments: state.establishments,
+      fetchEstablishments: state.fetchEstablishments,
+    })
+  );
 
-  // Call fetchEstablishments when the component mounts
   useEffect(() => {
     fetchEstablishments();
   }, [fetchEstablishments]);
@@ -35,16 +35,24 @@ export function EstablishmentsPage() {
   );
 
   const uniqueCities = Array.from(
-    new Set(establishments.map((establishment) => establishment.address.split(',')[0]))
+    new Set(
+      establishments.map((establishment) => establishment.address.split(",")[0])
+    )
   );
 
   const filteredEstablishments = establishments.filter((establishment) => {
     const matchesSearch = establishment.name
       .toLowerCase()
       .includes(searchQuery.toLowerCase());
-    const matchesType = selectedType ? establishment.type.includes(selectedType) : true;
-    const matchesCountry = selectedCountry ? establishment.country === selectedCountry : true;
-    const matchesCity = selectedCity ? establishment.address.split(',')[0] === selectedCity : true;
+    const matchesType = selectedType
+      ? establishment.type.includes(selectedType)
+      : true;
+    const matchesCountry = selectedCountry
+      ? establishment.country === selectedCountry
+      : true;
+    const matchesCity = selectedCity
+      ? establishment.address.split(",")[0] === selectedCity
+      : true;
     return matchesSearch && matchesType && matchesCountry && matchesCity;
   });
 
@@ -73,7 +81,7 @@ export function EstablishmentsPage() {
 
         <div className="filter-select-container">
           <select
-            value={selectedType || ''}
+            value={selectedType || ""}
             onChange={(e) => setSelectedType(e.target.value || null)}
             className="filter-select"
           >
@@ -91,7 +99,7 @@ export function EstablishmentsPage() {
 
         <div className="filter-select-container">
           <select
-            value={selectedCountry || ''}
+            value={selectedCountry || ""}
             onChange={(e) => setSelectedCountry(e.target.value || null)}
             className="filter-select"
           >
@@ -109,7 +117,7 @@ export function EstablishmentsPage() {
 
         <div className="filter-select-container">
           <select
-            value={selectedCity || ''}
+            value={selectedCity || ""}
             onChange={(e) => setSelectedCity(e.target.value || null)}
             className="filter-select"
           >

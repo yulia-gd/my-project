@@ -6,13 +6,13 @@ export function RegionCard({ region }) {
   return (
     <Link
       to={`/regions/${region.id}`}
-      className="region-card group" // Використовуємо клас з CSS
+      className="region-card group" 
     >
       <div className="region-card-image-container">
         <img
           src={region.imageUrl}
           alt={region.name}
-          className="region-card-image" // Використовуємо клас з CSS
+          className="region-card-image" 
         />
       </div>
       <div className="region-card-text">

@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { useRegionsStore } from '../store/regionsStore';
-import { RegionCard } from '../components/regions/RegionCard';
-import { Globe } from 'lucide-react';
-import '../style/RegionPage.css';
+import React, { useEffect } from "react";
+import { useRegionsStore } from "../store/regionsStore";
+import { RegionCard } from "../components/regions/RegionCard";
+import { Globe } from "lucide-react";
+import "../style/RegionPage.css";
 
 export function RegionsPage() {
   const { regions, fetchRegions } = useRegionsStore((state) => ({
@@ -10,14 +10,12 @@ export function RegionsPage() {
     fetchRegions: state.fetchRegions,
   }));
 
-  // Fetch regions if they are not already available
   useEffect(() => {
     if (regions.length === 0) {
       fetchRegions();
     }
   }, [regions, fetchRegions]);
 
-  // Show a loading message if regions are not loaded yet
   if (regions.length === 0) {
     return (
       <div className="page-container">

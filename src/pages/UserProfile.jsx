@@ -1,6 +1,6 @@
-import { useAuthStore } from '../store/authStore';
-import { useNavigate } from 'react-router-dom';
-import '../style/UserProfile.css';
+import { useAuthStore } from "../store/authStore";
+import { useNavigate } from "react-router-dom";
+import "../style/UserProfile.css";
 
 export function UserProfile() {
   const { user } = useAuthStore();
@@ -11,14 +11,13 @@ export function UserProfile() {
   }
 
   const handleEditProfile = () => {
-    navigate('/edit-profile');
+    navigate("/edit-profile");
   };
 
   return (
     <div className="profile-container">
       <h1 className="profile-title">My Profile</h1>
       <div className="profile-content">
-        {/* Фото профілю */}
         <div className="flex-shrink-0">
           <img
             src={user.profilePhotoUrl}
@@ -26,7 +25,7 @@ export function UserProfile() {
             className="profile-photo"
           />
         </div>
-        {/* Інформація про користувача */}
+
         <div className="profile-info">
           <div className="space-y-4">
             <div className="info-block">

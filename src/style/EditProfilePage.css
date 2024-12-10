@@ -1,42 +1,31 @@
-/* EditProfilePage.css */
-
-/* Контейнер сторінки редагування профілю */
 .edit-profile-container {
-    @apply max-w-4xl mx-auto p-8 bg-white shadow-lg rounded-lg border border-gray-200;
-  }
-  
-  /* Заголовок сторінки */
-  .edit-profile-title {
-    @apply text-3xl font-bold text-red-600 mb-6 text-center;
-  }
-  
-  /* Формуляр редагування */
-  .edit-profile-form {
-    @apply space-y-4;
-  }
-  
-  /* Мітки для інпутів */
-  .input-label {
-    @apply block text-sm font-medium text-gray-700;
-  }
-  
-  /* Поля вводу та вибір */
-  .input-field {
-    @apply mt-1 block w-full rounded-md border border-gray-300 shadow-sm;
-  }
-  
-  /* Поля з помилками */
-  .input-error {
-    @apply border-red-500;
-  }
-  
-  /* Повідомлення про помилку */
-  .error-message {
-    @apply mt-1 text-sm text-red-600;
-  }
-  
-  /* Кнопка збереження */
-  .save-button {
-    @apply w-full bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700 transition;
-  }
-  
+  @apply max-w-4xl mx-auto p-8 bg-white shadow-lg rounded-lg border border-gray-200;
+}
+
+.edit-profile-title {
+  @apply text-3xl font-bold text-red-600 mb-6 text-center;
+}
+
+.edit-profile-form {
+  @apply space-y-4;
+}
+
+.input-label {
+  @apply block text-sm font-medium text-gray-700;
+}
+
+.input-field {
+  @apply mt-1 block w-full rounded-md border border-gray-300 shadow-sm;
+}
+
+.input-error {
+  @apply border-red-500;
+}
+
+.error-message {
+  @apply mt-1 text-sm text-red-600;
+}
+
+.save-button {
+  @apply w-full bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700 transition;
+}

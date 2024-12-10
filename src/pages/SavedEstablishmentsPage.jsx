@@ -1,16 +1,16 @@
-import { useEffect } from 'react';
-import { useEstablishmentsStore } from '../store/establishmentsStore';
-import { EstablishmentCard } from '../components/establishments/EstablishmentCard';
-import '../style/SavedEstablishmentsPage.css';
+import { useEffect } from "react";
+import { useEstablishmentsStore } from "../store/establishmentsStore";
+import { EstablishmentCard } from "../components/establishments/EstablishmentCard";
+import "../style/SavedEstablishmentsPage.css";
 
 export function SavedEstablishmentsPage() {
-  const { establishments, savedEstablishments, fetchEstablishments } = useEstablishmentsStore((state) => ({
-    establishments: state.establishments,
-    savedEstablishments: state.savedEstablishments,
-    fetchEstablishments: state.fetchEstablishments,
-  }));
+  const { establishments, savedEstablishments, fetchEstablishments } =
+    useEstablishmentsStore((state) => ({
+      establishments: state.establishments,
+      savedEstablishments: state.savedEstablishments,
+      fetchEstablishments: state.fetchEstablishments,
+    }));
 
-  // Fetch establishments when the component mounts
   useEffect(() => {
     fetchEstablishments();
   }, [fetchEstablishments]);
@@ -31,13 +31,17 @@ export function SavedEstablishmentsPage() {
       {savedPlaces.length > 0 ? (
         <div className="saved-grid">
           {savedPlaces.map((establishment) => (
-            <EstablishmentCard key={establishment.id} establishment={establishment} />
+            <EstablishmentCard
+              key={establishment.id}
+              establishment={establishment}
+            />
           ))}
         </div>
       ) : (
         <div className="empty-state">
           <p className="empty-message">
-            You haven't saved any establishments yet. Explore and save your favorites!
+            You haven't saved any establishments yet. Explore and save your
+            favorites!
           </p>
         </div>
       )}

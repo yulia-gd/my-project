@@ -1,17 +1,18 @@
-import { create } from 'zustand';
-import axios from 'axios';
+import { create } from "zustand";
+import axios from "axios";
 
 export const useEstablishmentsStore = create((set, get) => ({
   establishments: [],
   savedEstablishments: [],
 
-  // Функція для завантаження закладів з бекенду
   fetchEstablishments: async () => {
     try {
-      const response = await axios.get('https://my-project-x98y.onrender.com/api/establishments');
+      const response = await axios.get(
+        "https://my-project-x98y.onrender.com/api/establishments"
+      );
       set({ establishments: response.data });
     } catch (error) {
-      console.error('Error fetching establishments:', error);
+      console.error("Error fetching establishments:", error);
     }
   },
 
@@ -37,7 +38,7 @@ export const useEstablishmentsStore = create((set, get) => ({
 
   filterByCity: (city) => {
     return get().establishments.filter(
-      (establishment) => establishment.address.split(',')[0] === city
+      (establishment) => establishment.address.split(",")[0] === city
     );
   },
 }));

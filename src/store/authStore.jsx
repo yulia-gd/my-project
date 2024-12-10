@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
 export const useAuthStore = create((set) => ({
   user: null,
@@ -6,27 +6,28 @@ export const useAuthStore = create((set) => ({
 
   login: async (email) => {
     try {
-      const mockPhotoPath = 'https://wiki.legalaid.gov.ua/images/thumb/0/0d/Person2.jpg/360px-Person2.jpg';
+      const mockPhotoPath =
+        "https://wiki.legalaid.gov.ua/images/thumb/0/0d/Person2.jpg/360px-Person2.jpg";
       const mockUser = {
-        id: '1',
+        id: "1",
         email,
-        name: 'Yulia Huda',
+        name: "Yulia Huda",
         savedEstablishments: [],
         birthYear: 2005,
-        gender: 'Female',
+        gender: "Female",
         profilePhotoUrl: mockPhotoPath,
       };
 
       set({ user: mockUser, isAuthenticated: true });
     } catch (error) {
-      console.error('Login error:', error);
+      console.error("Login error:", error);
     }
   },
 
   register: async (name, email, photoPath, birthYear, gender) => {
     try {
       const mockUser = {
-        id: '2',
+        id: "2",
         email,
         name,
         savedEstablishments: [],
@@ -37,7 +38,7 @@ export const useAuthStore = create((set) => ({
 
       set({ user: mockUser, isAuthenticated: true });
     } catch (error) {
-      console.error('Registration error:', error);
+      console.error("Registration error:", error);
     }
   },
 
@@ -54,7 +55,7 @@ export const useAuthStore = create((set) => ({
         },
       }));
     } catch (error) {
-      console.error('Update user error:', error);
+      console.error("Update user error:", error);
     }
   },
 }));
