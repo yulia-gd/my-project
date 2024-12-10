@@ -6,7 +6,7 @@ export const useAuthStore = create((set) => ({
   isAuthenticated: false,
 
   login: async (email, password) => {
-    try {
+   
       const response = await axios.post(
         "https://my-project-x98y.onrender.com/api/users/login",
         { email, password }
@@ -16,9 +16,7 @@ export const useAuthStore = create((set) => ({
       console.log(userData.savedEstablishments);
       // Directly set savedEstablishments from userData
       useEstablishmentsStore.setState({ savedEstablishments: userData.savedEstablishments });
-    } catch (error) {
-      console.error("Login error:", error);
-    }
+   
   },
 
   register: async (name, email, password, birthYear, gender) => {

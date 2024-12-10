@@ -15,19 +15,24 @@ export function RegisterForm() {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-  
+
     // Валідація
     if (!name || !email || !password || !birthYear || !gender) {
       alert("Please fill in all required fields!");
       console.error("All fields are required");
       return;
     }
-  
+
     if (password !== confirmPassword) {
       alert("Passwords do not match!");
       return;
     }
-  
+
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters long!");
+      return;
+    }
+
     try {
       // Реєстрація
       await register(name, email, password, birthYear, gender);
@@ -37,7 +42,7 @@ export function RegisterForm() {
       alert("Registration failed. Please try again.");
     }
   };
-  
+
   return (
     <form onSubmit={handleRegister} className="form-container">
       <h2 className="form-title">Register</h2>

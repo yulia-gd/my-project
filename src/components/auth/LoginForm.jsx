@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useAuthStore } from "../../store/authStore";
 import { useNavigate, Link } from "react-router-dom";
 import "../../style/LoginForm.css";
+import axios from "axios";
 
 const loginSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -23,15 +24,14 @@ export function LoginForm() {
 
   const onSubmit = async (data) => {
     try {
-      // Передаємо і email, і password
       await login(data.email, data.password);
       navigate("/profile");
     } catch (error) {
-      // Лог для розробника
       console.error("Login failed:", error);
 
-      // Показуємо користувачеві повідомлення
-      alert("Login failed. Please check your email and password.");
+    
+        alert("User not found. Please check your email and password.");
+      
     }
   };
 
