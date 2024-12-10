@@ -8,6 +8,7 @@ export function RegisterForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [photo, setPhoto] = useState(null);
   const [birthYear, setBirthYear] = useState('');
   const [gender, setGender] = useState('female');
@@ -23,6 +24,11 @@ export function RegisterForm() {
 
     if (birthYear === '') {
       alert('Please enter your birth year!');
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert('Passwords do not match!');
       return;
     }
 
@@ -69,6 +75,17 @@ export function RegisterForm() {
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          className="form-input"
+        />
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
           className="form-input"
         />
       </div>
