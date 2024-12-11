@@ -1,8 +1,8 @@
 import { create } from "zustand";
 import axios from "axios";
-import { useAuthStore } from "./authStore"; // Assuming the auth store is in the same directory
+import { useAuthStore } from "./authStore"; 
 
-// Магазин закладів
+
 export const useEstablishmentsStore = create((set, get) => ({
   establishments: [],
   savedEstablishments: [],
@@ -18,39 +18,32 @@ export const useEstablishmentsStore = create((set, get) => ({
 
   toggleSaved: async (id) => {
     try {
-      const { user, isAuthenticated } = useAuthStore.getState(); // Отримання стану authStore
+      const { user, isAuthenticated } = useAuthStore.getState();
       if (!isAuthenticated) throw new Error("User is not authenticated");
   
-      // Перевіряємо, чи заклад вже збережений
       const isAlreadySaved = get().savedEstablishments.includes(id);
   
       if (isAlreadySaved) {
-        // Викликаємо DELETE-запит для видалення із збережених
         const response = await axios.delete(
           `https://my-project-x98y.onrender.com/api/users/${user.email}/remove-establishment`,
-          { data: { establishmentId: id } } // Передаємо ID закладу в тілі запиту
+          { data: { establishmentId: id } } 
         );
-  
-        // Оновлюємо список збережених закладів у стані
         set({
           savedEstablishments: get().savedEstablishments.filter(
             (estId) => estId !== id
           ),
         });
       } else {
-        // Викликаємо POST-запит для додавання у збережені
         const response = await axios.post(
           `https://my-project-x98y.onrender.com/api/users/${user.email}/save-establishment`,
           { establishmentId: id }
         );
   
-        // Додаємо до списку збережених закладів
         set({
           savedEstablishments: [...get().savedEstablishments, id],
         });
       }
-  
-      // Оновлюємо користувача у стані
+
       set({ user: response.data.user });
     } catch (error) {
       console.error("Error toggling saved establishment:", error);

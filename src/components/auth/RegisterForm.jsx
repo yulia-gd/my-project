@@ -16,7 +16,7 @@ export function RegisterForm() {
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    // Валідація
+    
     if (!name || !email || !password || !birthYear || !gender) {
       alert("Please fill in all required fields!");
       console.error("All fields are required");
@@ -34,12 +34,11 @@ export function RegisterForm() {
     }
 
     try {
-      // Реєстрація
       await register(name, email, password, birthYear, gender);
       navigate("/profile");
     } catch (error) {
       console.error("Registration failed:", error);
-      alert("Registration failed. Please try again.");
+      alert("Registration failed. This email is already in use");
     }
   };
 

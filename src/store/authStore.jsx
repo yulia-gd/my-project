@@ -13,14 +13,11 @@ export const useAuthStore = create((set) => ({
       );
       const userData = response.data.user;
       set({ user: userData, isAuthenticated: true });
-      console.log(userData.savedEstablishments);
-      // Directly set savedEstablishments from userData
       useEstablishmentsStore.setState({ savedEstablishments: userData.savedEstablishments });
    
   },
 
   register: async (name, email, password, birthYear, gender) => {
-    try {
       if (!name || !email || !password || !birthYear || !gender) {
         console.error("All fields are required");
         return;
@@ -38,12 +35,8 @@ export const useAuthStore = create((set) => ({
       );
       const userData = response.data.user;
       set({ user: userData, isAuthenticated: true });
-
-      // Directly set savedEstablishments from userData
       useEstablishmentsStore.setState({ savedEstablishments: userData.savedEstablishments });
-    } catch (error) {
-      console.error("Registration error:", error);
-    }
+    
   },
 
   logout: () => {
@@ -52,14 +45,12 @@ export const useAuthStore = create((set) => ({
 
   updateUser: async (updatedData) => {
     try {
-      // Отримання поточного користувача з стану
       const { user } = useAuthStore.getState();
       if (!user || !user.id) {
         console.error("User not authenticated or ID not found");
         return;
       }
-  
-      // Виконання PUT-запиту з використанням id користувача
+
       const response = await axios.put(
         `https://my-project-x98y.onrender.com/api/users/${user._id}`,
         {
@@ -69,7 +60,6 @@ export const useAuthStore = create((set) => ({
         }
       );
   
-      // Оновлення користувача у стані
       set({ user: response.data.user });
     } catch (error) {
       console.error("Update user error:", error);

@@ -29,9 +29,7 @@ export function LoginForm() {
     } catch (error) {
       console.error("Login failed:", error);
 
-    
-        alert("User not found. Please check your email and password.");
-      
+      alert("User not found. Please check your email and password.");
     }
   };
 
