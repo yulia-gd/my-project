@@ -52,9 +52,10 @@ export function Header() {
             ) : (
               <div className="auth-links">
                 <Link to="/login" className="auth-button">
-                  Login
+                  Logіn
                 </Link>
                 <Link to="/register" className="auth-button">
+
                   Register
                 </Link>
               </div>
