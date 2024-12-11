@@ -1,13 +1,12 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
-const connectDB = require('./db.cjs'); // Підключення до MongoDB
-const Region = require('./backend/models/Region.cjs'); // Модель для регіонів
-const Country = require('./backend/models/Country.cjs'); // Модель для країн
+const connectDB = require('./db.cjs'); 
+const Region = require('./backend/models/Region.cjs'); 
+const Country = require('./backend/models/Country.cjs'); 
 
-// Підключення до MongoDB
+
 connectDB();
 
-// Дані для вставлення нових регіонів
 const regionsData = [
   {
     id: "asia",
@@ -46,7 +45,7 @@ const regionsData = [
   }
 ];
 
-// Функція для вставлення даних
+
 async function insertRegionData() {
   try {
     for (const region of regionsData) {
@@ -66,9 +65,8 @@ async function insertRegionData() {
   } catch (error) {
     console.error('Error inserting regions:', error);
   } finally {
-    mongoose.disconnect(); // Закриття підключення до MongoDB після завершення
+    mongoose.disconnect(); 
   }
 }
 
-// Виконання функції вставлення
 insertRegionData();
