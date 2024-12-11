@@ -11,7 +11,7 @@ const profileSchema = z.object({
     .number()
     .min(1900, "Year must be at least 1900")
     .max(new Date().getFullYear(), "Year cannot be in the future"),
-  gender: z.enum(["Male", "Female", "Other"], "Select a valid gender"),
+  gender: z.enum(["Male", "Female"], "Select a valid gender"),
 });
 export function EditProfilePage() {
   const { user, updateUser } = useAuthStore();
@@ -24,7 +24,7 @@ export function EditProfilePage() {
     defaultValues: {
       name: user?.name || "",
       birthYear: user?.birthYear || "",
-      gender: user?.gender || "Other",
+      gender: user?.gender || "",
     },
     resolver: zodResolver(profileSchema),
   });
@@ -71,7 +71,6 @@ export function EditProfilePage() {
           >
             <option value="Male">Male</option>
             <option value="Female">Female</option>
-            <option value="Other">Other</option>
           </select>
           {errors.gender && (
             <p className="error-message">{errors.gender.message}</p>
