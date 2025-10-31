@@ -9,7 +9,7 @@ export const useEstablishmentsStore = create((set, get) => ({
 
   fetchEstablishments: async () => {
     try {
-      const response = await axios.get("https://my-project-x98y.onrender.com/api/establishments");
+      const response = await axios.get("http://localhost:3000com/api/establishments");
       set({ establishments: response.data });
     } catch (error) {
       console.error("Error fetching establishments:", error);
