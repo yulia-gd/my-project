@@ -8,7 +8,7 @@ export const useAuthStore = create((set) => ({
   login: async (email, password) => {
    
       const response = await axios.post(
-        "https://my-project-x98y.onrender.com/api/users/login",
+        "http://localhost:3000/api/users/login",
         { email, password }
       );
       const userData = response.data.user;
@@ -24,7 +24,7 @@ export const useAuthStore = create((set) => ({
       }
 
       const response = await axios.post(
-        "https://my-project-x98y.onrender.com/api/users/register",
+        "http://localhost:3000/api/users/register",
         {
           name,
           email,
