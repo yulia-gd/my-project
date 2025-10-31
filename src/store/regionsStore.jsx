@@ -8,7 +8,7 @@ export const useRegionsStore = create((set) => ({
   fetchRegions: async () => {
     try {
       const response = await axios.get(
-        "https://my-project-x98y.onrender.com/api/regions"
+        "http://localhost:3000/api/regions"
       );
       set({ regions: response.data });
     } catch (error) {
