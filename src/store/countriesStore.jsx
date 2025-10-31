@@ -9,7 +9,7 @@ export const useCountriesStore = create((set, get) => ({
   fetchCountries: async () => {
     try {
       const response = await axios.get(
-        "https://my-project-x98y.onrender.com/api/countries"
+        "http://localhost:3000/api/countries"
       );
       set({ countries: response.data });
     } catch (error) {
