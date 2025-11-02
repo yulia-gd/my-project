@@ -2,11 +2,50 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const connectDB = require('./db.cjs');
 
+const Region = require('./backend/models/Region.cjs');
 const Country = require('./backend/models/Country.cjs');
 const Dish = require('./backend/models/Dish.cjs');
 const Establishment = require('./backend/models/Establishment.cjs');
 
 connectDB();
+
+const regionsData = [
+  {
+    id: "asia",
+    name: "Asia",
+    description: "Discover the rich and diverse culinary traditions of Asia, from the spicy curries of India to delicate sushi from Japan.",
+    imageUrl: "https://st4.depositphotos.com/3823309/37967/i/450/depositphotos_379673.jpg",
+    countries: [],
+  },
+  {
+    id: "europe",
+    name: "Europe",
+    description: "Experience the sophisticated flavors of European cuisine, from Italian pasta to French pastries.",
+    imageUrl: "https://images.unsplash.com/photo-1467003909585-2f8a72700288",
+    countries: [],
+  },
+  {
+    id: "americas",
+    name: "The Americas",
+    description: "From North to South, explore the diverse tastes of the Americas, including Mexican, Brazilian, and American classics.",
+    imageUrl: "https://st3.depositphotos.com/13324256/34796/i/450/depositphotos_34796.jpg",
+    countries: [],
+  },
+  {
+    id: "africa",
+    name: "Africa",
+    description: "Discover the bold and flavorful cuisine of Africa, from North African tagines to West African stews.",
+    imageUrl: "https://images.squarespace-cdn.com/content/v1/5a77c339be42d6cd6a7cc25a/africa.jpg",
+    countries: [],
+  },
+  {
+    id: "australia",
+    name: "Australia",
+    description: "Explore the unique flavors of Australian cuisine, including seafood, native ingredients, and fusion dishes.",
+    imageUrl: "https://virtuoso-prod.dotcms.cloud/dA/6203a6f4553058353b831da9072fa104/australia.jpg",
+    countries: [],
+  },
+];
 
 const countriesData = [
   {
@@ -94,9 +133,13 @@ const establishmentsData = [
 
 async function insertData() {
   try {
+    await Region.deleteMany();
     await Country.deleteMany();
     await Dish.deleteMany();
     await Establishment.deleteMany();
+
+    const insertedRegions = await Region.insertMany(regionsData);
+    console.log("Regions inserted");
 
     await Country.insertMany(countriesData);
     console.log("Countries inserted");
